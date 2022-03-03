@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { QuestionCard } from "./components/QuestionCard";
 import { fetchQuestions, Difficulty, QuestionState } from "./API";
-//import { GlobalStyle, Wrapper } from './App.styles';
+import { GlobalStyle, Wrapper } from './App.style';
 
 const TOTAL_QUESTIONS = 10;
 
@@ -63,6 +63,8 @@ function App() {
 
   return (
     <>
+    <GlobalStyle />
+    <Wrapper>
       <h1>Quiz</h1>
 
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
@@ -94,7 +96,7 @@ function App() {
           Next
         </button>
       ) : null}
-      
+      </Wrapper>
     </>
   );
 }
